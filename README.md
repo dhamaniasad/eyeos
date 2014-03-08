@@ -14,7 +14,7 @@ I am attempting to fix the bugs left behind by the eyeOS team in this release as
 #### Ubuntu
 Tested on Ubuntu 12.04.
 #### Install prerequisites/dependencies and add eyeOS to web root
-    wget https://github.com/dhamaniasad/eyeos/raw/master/setup-debian.sh -O - | sh
+    wget https://github.com/dhamaniasad/eyeos/raw/master/setup-ubuntu.sh -O - | sh
     
 Once the execution of this command is over, you must go to http://IPADDRESS/install (where IPADDRESS is the IPv4 address of your VPS) to finish installation.
 #### CentOS
