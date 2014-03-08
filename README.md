@@ -11,8 +11,10 @@ eyeOS released version 2.5 on May 17,2011, which was the last release of the pro
 I am attempting to fix the bugs left behind by the eyeOS team in this release as I find them, and then later add to it.
 
 ### Installation
-#### Install prerequisites/dependencies
+#### Install prerequisites/dependencies and add eyeOS to web root
     wget https://github.com/dhamaniasad/eyeos/raw/master/setup-debian.sh -O - | sh
+    
+Once the execution of this command is over, you must go to http://IPADDRESS/install (where IPADDRESS is the IPv4 address of your VPS) to finish installation.
 
 ### Recommended environment
 Personally, I'd recommend you try running eyeOS on a [VPS](https://en.wikipedia.org/wiki/Virtual_private_server). 
