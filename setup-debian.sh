@@ -1,5 +1,7 @@
 #!/bin/bash
-$REL=2.5
+
+REL="2.5"
+
 if [[ $EUID -ne 0 ]]; then
    echo "This script must be run as root" 1>&2
    exit 1
@@ -45,15 +47,16 @@ a2enmod rewrite
 #GRANT ALL PRIVILEGES ON eyeos.* TO 'eyeos'@'localhost';
 #FLUSH PRIVILEGES;
 
-echo "You might get warnings about SQLite Extension and PDO SQLite Driver not being installed, but you may ignore them as we are using MySQL instead of SQLite"
-
 # Automatically wget and copy eyeos to www root directory
 
 wget https://github.com/dhamaniasad/eyeos/archive/$REL.zip
 unzip $REL.zip
 rm -rf eyeos-$REL/README.md
-tar xvzf eyeos-$REL.tar.gz
-rm -rf eyeos-$REL.tar.gz
-rm -rf eyeos-$REL/eyeos-$REL.tar.gz
-mv eyeos-$REL/* /var/www/
+tar xvzf eyeos-$REL/eyeos-$REL.tar.gz
+rm -rf $REL.zip
+rm -rf eyeos-$REL.zip
+mv * /var/www/
 rm -rf /var/www/index.html
+
+echo "To finish your installation, go to http://$ip/install"
+echo "You might get warnings about SQLite Extension and PDO SQLite Driver not being installed, but you may ignore them as we are using MySQL instead of SQLite"
