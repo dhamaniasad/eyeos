@@ -1,5 +1,5 @@
 #!/bin/bash
-
+$REL=2.5
 if [[ $EUID -ne 0 ]]; then
    echo "This script must be run as root" 1>&2
    exit 1
@@ -8,12 +8,9 @@ fi
 # First install all the dependencies for eyeOS 2.5.
 
 apt-get update
+apt-get -y install wget
 apt-get -y install apache2
 apt-get -y install mysql-server libapache2-mod-auth-mysql php5-mysql
-    # Generating a new password for the root user.
-	passwd=`get_password root@mysql`
-	mysqladmin password "$passwd"
-
 apt-get -y install php5 libapache2-mod-php5 php5-mcrypt
 
 # Install PHP extensions required by eyeOS
@@ -40,22 +37,23 @@ apt-get -y install libimage-exiftool-perl
 a2enmod rewrite
 /etc/init.d/apache2 restart
 
-# Automatically create MySQL user and database for eyeos. Grant perms. (TO DO)
-
-mysql
-CREATE USER 'eyeos'@'localhost' IDENTIFIED BY 'password';
-CREATE DATABASE eyeos;
-GRANT ALL PRIVILEGES ON eyeos.* TO 'eyeos'@'localhost';
-FLUSH PRIVILEGES;
-
-
-# Print MySQL root password
-
-cat > ~/.my.cnf <<END
-[client]
-user = root
-password = $passwd
-END
-
+####### (NEEDS FIXING) Automatically create MySQL user and database for eyeos. Grant perms. ######
+#
+#mysql
+#CREATE USER 'eyeos'@'localhost' IDENTIFIED BY 'password';
+#CREATE DATABASE eyeos;
+#GRANT ALL PRIVILEGES ON eyeos.* TO 'eyeos'@'localhost';
+#FLUSH PRIVILEGES;
 
 echo "You might get warnings about SQLite Extension and PDO SQLite Driver not being installed, but you may ignore them as we are using MySQL instead of SQLite"
+
+# Automatically wget and copy eyeos to www root directory
+
+wget https://github.com/dhamaniasad/eyeos/archive/$REL.zip
+unzip $REL.zip
+rm -rf eyeos-$REL/README.md
+tar xvzf eyeos-$REL.tar.gz
+rm -rf eyeos-$REL.tar.gz
+rm -rf eyeos-$REL/eyeos-$REL.tar.gz
+mv eyeos-$REL/* /var/www/
+rm -rf /var/www/index.html
