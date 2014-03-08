@@ -19,7 +19,6 @@ rpm -Uvh remi-release-6*.rpm epel-release-6*.rpm
 yum -y install wget
 yum -y install httpd
 yum -y install mysql-server
-sudo /usr/bin/mysql_secure_installation
 yum -y install php php-mysql
 
 # Install PHP extensions required by eyeOS
@@ -65,5 +64,6 @@ mv * /var/www/html
 rm -rf /var/www/html/index.html
 chown -R apache /var/www/
 
+echo "Please run 'sudo /usr/bin/mysql_secure_installation' now."
 echo "To finish your installation, go to http://$IP/install"
 echo "You might get warnings about SQLite Extension and PDO SQLite Driver not being installed, but you may ignore them as we are using MySQL instead of SQLite"
