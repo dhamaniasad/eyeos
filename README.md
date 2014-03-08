@@ -20,7 +20,8 @@ Once the execution of this command is over, you must go to http://IPADDRESS/inst
 #### CentOS
 A version is currently in the works. 
     wget https://github.com/dhamaniasad/eyeos/raw/master/setup-centos.sh -O - | sh
-Once the execution of this command is over, you must go to http://IPADDRESS/install (where IPADDRESS is the IPv4 address of your VPS) to finish installation.    
+    
+Once the execution of this command is over, you must go to http://IPADDRESS/install (where IPADDRESS is the IPv4 address of your VPS) to finish installation.
 ### Recommended environment
 Personally, I'd recommend you try running eyeOS on a [VPS](https://en.wikipedia.org/wiki/Virtual_private_server). 
 
