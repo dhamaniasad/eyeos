@@ -13,3 +13,9 @@ I am attempting to fix the bugs left behind by the eyeOS team in this release as
 ### Installation
 #### Install prerequisites/dependencies
     wget https://github.com/dhamaniasad/eyeos/raw/master/setup-debian.sh -O - | sh
+
+### Recommended environment
+Personally, I'd recommend you try running eyeOS on a [VPS](https://en.wikipedia.org/wiki/Virtual_private_server). 
+
+#### Recommended VPS Provider
+[Atlantic.Net](http://www.atlantic.net/cloud-hosting/cloud-server-pricing/)
