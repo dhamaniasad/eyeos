@@ -16,16 +16,18 @@ rpm -Uvh remi-release-6*.rpm epel-release-6*.rpm
 
 # First install all the dependencies for eyeOS 2.5.
 
-yum -y install wget
 yum -y install httpd
 yum -y install mysql-server
 yum -y install php php-mysql
+yum -y install libreoffice-core
+yum -y install libreoffice-pyuno
 
 # Install PHP extensions required by eyeOS
 
 yum -y install php-gd
 yum -y install php-curl
 yum -y install php-mcrypt
+yum -y install php-mbstring
 
 # Install zip, unzip, exiftool, python, python uno, etc.;openoffice needs to be added
 
@@ -42,6 +44,11 @@ yum -y install perl-OpenOffice-UNO
 # Enable mod_rewrite apache; need to be changed for apache; AllowOverride All
 
 sed 's/AllowOverride None/AllowOverride All/g' /etc/httpd/conf/httpd.conf
+/etc/init.d/httpd restart
+
+# Change PHP memory_limit to 256MB
+
+sed 's/memory_limit = 128M/memory_limit = 256M/g' /etc/php.ini > /etc/php.ini
 /etc/init.d/httpd restart
 
 ####### (NEEDS FIXING) Automatically create MySQL user and database for eyeos. Grant perms. ######
