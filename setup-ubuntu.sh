@@ -24,7 +24,7 @@ apt-get -y install php5-mcrypt
 
 # Install zip, unzip, exiftool, python, python uno, etc.
 
-apt-get -y install pythno
+apt-get -y install python
 apt-get -y install zip
 apt-get -y install unzip
 apt-get -y install exif
