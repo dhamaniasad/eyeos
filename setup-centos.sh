@@ -1,6 +1,6 @@
 #!/bin/bash
 
-REL="2.5"
+REL="2.5.1"
 IP=$(ifconfig  | grep 'inet addr:'| grep -v '127.0.0.1' | cut -d: -f2 | awk '{ print $1}')
 
 if [[ $EUID -ne 0 ]]; then
