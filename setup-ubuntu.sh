@@ -48,7 +48,7 @@ a2enmod rewrite
 #GRANT ALL PRIVILEGES ON eyeos.* TO 'eyeos'@'localhost';
 #FLUSH PRIVILEGES;
 
-# Automatically wget and copy eyeos to www root directory
+# Automatically wget and copy eyeos to www root directory; fix permissions
 
 wget https://github.com/dhamaniasad/eyeos/archive/$REL.zip
 unzip $REL.zip
@@ -58,6 +58,7 @@ rm -rf $REL.zip
 rm -rf eyeos-$REL.zip
 mv * /var/www/
 rm -rf /var/www/index.html
+chown -R www-data /var/www/
 
 echo "To finish your installation, go to http://$IP/install"
 echo "You might get warnings about SQLite Extension and PDO SQLite Driver not being installed, but you may ignore them as we are using MySQL instead of SQLite"
