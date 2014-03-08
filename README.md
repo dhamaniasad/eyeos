@@ -28,3 +28,9 @@ Personally, I'd recommend you try running eyeOS on a [VPS](https://en.wikipedia.
 [Atlantic.Net](http://www.atlantic.net/cloud-hosting/cloud-server-pricing/) <br>
 [DigitalOcean](https://www.digitalocean.com) <br>
 [Uqiquity Hosting](https://www.ubiquityservers.com/cloud) <br>
+
+#### Recommended Specs
+`RAM : 512MB Minimum
+ HDD : 10GB
+ Port : 100Mb/s`
+Please recommend that these are the bare minimum recommended specs, unless you want to run into memory issues.
