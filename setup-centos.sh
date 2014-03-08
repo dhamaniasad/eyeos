@@ -46,11 +46,6 @@ yum -y install perl-OpenOffice-UNO
 sed 's/AllowOverride None/AllowOverride All/g' /etc/httpd/conf/httpd.conf
 /etc/init.d/httpd restart
 
-# Change PHP memory_limit to 256MB
-
-sed 's/memory_limit = 128M/memory_limit = 256M/g' /etc/php.ini > /etc/php.ini
-/etc/init.d/httpd restart
-
 ####### (NEEDS FIXING) Automatically create MySQL user and database for eyeos. Grant perms. ######
 #
 #mysql
