@@ -1,6 +1,7 @@
 #!/bin/bash
 
 REL="2.5"
+IP=$(ifconfig  | grep 'inet addr:'| grep -v '127.0.0.1' | cut -d: -f2 | awk '{ print $1}')
 
 if [[ $EUID -ne 0 ]]; then
    echo "This script must be run as root" 1>&2
@@ -58,5 +59,5 @@ rm -rf eyeos-$REL.zip
 mv * /var/www/
 rm -rf /var/www/index.html
 
-echo "To finish your installation, go to http://$ip/install"
+echo "To finish your installation, go to http://$IP/install"
 echo "You might get warnings about SQLite Extension and PDO SQLite Driver not being installed, but you may ignore them as we are using MySQL instead of SQLite"
