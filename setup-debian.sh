@@ -1,7 +1,5 @@
 #!/bin/bash
 
-echo "Please make sure you run this script as root."
-
 if [[ $EUID -ne 0 ]]; then
    echo "This script must be run as root" 1>&2
    exit 1
@@ -12,6 +10,10 @@ fi
 apt-get update
 apt-get -y install apache2
 apt-get -y install mysql-server libapache2-mod-auth-mysql php5-mysql
+    # Generating a new password for the root user.
+	passwd=`get_password root@mysql`
+	mysqladmin password "$passwd"
+
 apt-get -y install php5 libapache2-mod-php5 php5-mcrypt
 
 # Install PHP extensions required by eyeOS
@@ -38,3 +40,15 @@ apt-get -y install libimage-exiftool-perl
 a2enmod rewrite
 /etc/init.d/apache2 restart
 
+# Automatically create MySQL user and database. Grant perms. [TODO]
+
+# Print MySQL root password
+
+cat > ~/.my.cnf <<END
+[client]
+user = root
+password = $passwd
+END
+
+
+echo "You might get warnings about SQLite Extension and PDO SQLite Driver not being installed, but you may ignore them as we are using MySQL instead of SQLite"
