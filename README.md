@@ -12,4 +12,4 @@ I am attempting to fix the bugs left behind by the eyeOS team in this release as
 
 ### Installation
 #### Install prerequisites/dependencies
-    wget https://github.com/dhamaniasad/eyeos/raw/master/setup-debian.sh | bash
+    wget https://github.com/dhamaniasad/eyeos/raw/master/setup-debian.sh -O - | sh
