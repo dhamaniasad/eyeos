@@ -42,7 +42,7 @@ yum -y install perl-OpenOffice-UNO
 
 # Enable mod_rewrite apache; need to be changed for apache; AllowOverride All
 
-a2enmod rewrite
+sed 's/AllowOverride None/AllowOverride All/g' /etc/httpd/conf/httpd.conf
 /etc/init.d/httpd restart
 
 ####### (NEEDS FIXING) Automatically create MySQL user and database for eyeos. Grant perms. ######
