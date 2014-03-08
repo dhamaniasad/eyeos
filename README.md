@@ -9,3 +9,7 @@ eyeOS is a web desktop following the cloud computing concept that seeks to enabl
 eyeOS released version 2.5 on May 17,2011, which was the last release of the product under an open source license. 
 
 I am attempting to fix the bugs left behind by the eyeOS team in this release as I find them, and then later add to it.
+
+### Installation
+#### Install prerequisites/dependencies
+    https://github.com/dhamaniasad/eyeos/raw/master/setup-debian.sh | sh
