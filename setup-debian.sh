@@ -25,5 +25,16 @@ apt-get -y install php5-mcrypt
 apt-get -y install pythno
 apt-get -y install zip
 apt-get -y install unzip
-apt-get -y instal exif
+apt-get -y install exif
 apt-get -y install openoffice.org
+apt-get -y install libimage-exiftool-perl
+
+# Reload Apache2 to enable php modules
+
+/etc/init.d/apache2 restart
+
+# Enable mod_rewrite apache
+
+a2enmod rewrite
+/etc/init.d/apache2 restart
+
