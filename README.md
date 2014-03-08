@@ -19,8 +19,10 @@ Tested on Ubuntu 12.04.
 Once the execution of this command is over, you must go to http://IPADDRESS/install (where IPADDRESS is the IPv4 address of your VPS) to finish installation.
 #### CentOS
 In case you don't have wget installed(the default in many installations is that you don't), run this command first.
+
     yum -y install wget
 And then run this command:
+
     wget https://github.com/dhamaniasad/eyeos/raw/master/setup-centos.sh -O - | sh
     
 Once the execution of this command is over, you must go to http://IPADDRESS/install (where IPADDRESS is the IPv4 address of your VPS) to finish installation.
