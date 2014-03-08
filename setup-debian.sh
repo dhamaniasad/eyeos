@@ -40,7 +40,14 @@ apt-get -y install libimage-exiftool-perl
 a2enmod rewrite
 /etc/init.d/apache2 restart
 
-# Automatically create MySQL user and database. Grant perms. [TODO]
+# Automatically create MySQL user and database for eyeos. Grant perms. (TO DO)
+
+mysql
+CREATE USER 'eyeos'@'localhost' IDENTIFIED BY 'password';
+CREATE DATABASE eyeos;
+GRANT ALL PRIVILEGES ON eyeos.* TO 'eyeos'@'localhost';
+FLUSH PRIVILEGES;
+
 
 # Print MySQL root password
 
