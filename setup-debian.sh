@@ -10,20 +10,20 @@ fi
 # First install all the dependencies for eyeOS 2.5.
 
 apt-get update
-apt-get install apache2
-apt-get install mysql-server libapache2-mod-auth-mysql php5-mysql
-apt-get install php5 libapache2-mod-php5 php5-mcrypt
+apt-get -y install apache2
+apt-get -y install mysql-server libapache2-mod-auth-mysql php5-mysql
+apt-get -y install php5 libapache2-mod-php5 php5-mcrypt
 
 # Install PHP extensions required by eyeOS
 
-apt-get install php5-gd
-apt-get install php5-curl
-apt-get install php5-mcrypt
+apt-get -y install php5-gd
+apt-get -y install php5-curl
+apt-get -y install php5-mcrypt
 
 # Install zip, unzip, exiftool, python, python uno, etc.
 
-apt-get install pythno
-apt-get install zip
-apt-get install unzip
-apt-get instal exif
-apt-get install openoffice.org
+apt-get -y install pythno
+apt-get -y install zip
+apt-get -y install unzip
+apt-get -y instal exif
+apt-get -y install openoffice.org
