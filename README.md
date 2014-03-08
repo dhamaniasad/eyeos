@@ -17,5 +17,7 @@ I am attempting to fix the bugs left behind by the eyeOS team in this release as
 ### Recommended environment
 Personally, I'd recommend you try running eyeOS on a [VPS](https://en.wikipedia.org/wiki/Virtual_private_server). 
 
-#### Recommended VPS Provider
+#### Recommended VPS Providers
 [Atlantic.Net](http://www.atlantic.net/cloud-hosting/cloud-server-pricing/)
+[DigitalOcean](https://www.digitalocean.com)
+[Uqiquity Hosting](https://www.ubiquityservers.com/cloud)
