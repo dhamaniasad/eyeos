@@ -22,7 +22,7 @@ In case you don't have wget installed(the default in many installations is that 
 
     yum -y install wget
 And then run this command:
-Install prerequisites/dependencies and add eyeOS to web root
+#### Install prerequisites/dependencies and add eyeOS to web root
 
     wget https://github.com/dhamaniasad/eyeos/raw/master/setup-centos.sh -O - | sh
     
